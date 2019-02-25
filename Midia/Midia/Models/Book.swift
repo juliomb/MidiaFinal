@@ -16,7 +16,7 @@ struct Book {
     let publishedDate: Date?
     let description: String?
     let coverURL: URL?
-    let ratings: Float?
+    let rating: Float?
     let numberOfReviews: Int?
     let price: Float?
 

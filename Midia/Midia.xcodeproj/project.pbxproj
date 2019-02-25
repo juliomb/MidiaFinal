@@ -13,11 +13,12 @@
 		1490EFE622248C6000866151 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1490EFE522248C6000866151 /* Assets.xcassets */; };
 		1490EFE922248C6000866151 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1490EFE722248C6000866151 /* LaunchScreen.storyboard */; };
 		1490EFF52224914D00866151 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1490EFF42224914D00866151 /* Book.swift */; };
-		1490EFFD22249CDC00866151 /* MidiaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1490EFFC22249CDC00866151 /* MidiaTests.swift */; };
+		1490F0192224A0E300866151 /* BookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1490F0182224A0E300866151 /* BookTests.swift */; };
+		1490F01A2224A15C00866151 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1490EFF42224914D00866151 /* Book.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		1490EFFF22249CDC00866151 /* PBXContainerItemProxy */ = {
+		1490F0132224A0C500866151 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1490EFD322248C5F00866151 /* Project object */;
 			proxyType = 1;
@@ -35,9 +36,9 @@
 		1490EFE822248C6000866151 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1490EFEA22248C6000866151 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1490EFF42224914D00866151 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
-		1490EFFA22249CDC00866151 /* MidiaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MidiaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1490EFFC22249CDC00866151 /* MidiaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MidiaTests.swift; sourceTree = "<group>"; };
-		1490EFFE22249CDC00866151 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1490F00E2224A0C500866151 /* MidiaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MidiaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1490F0122224A0C500866151 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1490F0182224A0E300866151 /* BookTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,7 +49,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1490EFF722249CDC00866151 /* Frameworks */ = {
+		1490F00B2224A0C500866151 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -62,7 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				1490EFDD22248C5F00866151 /* Midia */,
-				1490EFFB22249CDC00866151 /* MidiaTests */,
+				1490F00F2224A0C500866151 /* MidiaTests */,
 				1490EFDC22248C5F00866151 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -71,7 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				1490EFDB22248C5F00866151 /* Midia.app */,
-				1490EFFA22249CDC00866151 /* MidiaTests.xctest */,
+				1490F00E2224A0C500866151 /* MidiaTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -122,11 +123,11 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		1490EFFB22249CDC00866151 /* MidiaTests */ = {
+		1490F00F2224A0C500866151 /* MidiaTests */ = {
 			isa = PBXGroup;
 			children = (
-				1490EFFC22249CDC00866151 /* MidiaTests.swift */,
-				1490EFFE22249CDC00866151 /* Info.plist */,
+				1490F0122224A0C500866151 /* Info.plist */,
+				1490F0182224A0E300866151 /* BookTests.swift */,
 			);
 			path = MidiaTests;
 			sourceTree = "<group>";
@@ -151,22 +152,22 @@
 			productReference = 1490EFDB22248C5F00866151 /* Midia.app */;
 			productType = "com.apple.product-type.application";
 		};
-		1490EFF922249CDC00866151 /* MidiaTests */ = {
+		1490F00D2224A0C500866151 /* MidiaTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1490F00122249CDC00866151 /* Build configuration list for PBXNativeTarget "MidiaTests" */;
+			buildConfigurationList = 1490F0152224A0C500866151 /* Build configuration list for PBXNativeTarget "MidiaTests" */;
 			buildPhases = (
-				1490EFF622249CDC00866151 /* Sources */,
-				1490EFF722249CDC00866151 /* Frameworks */,
-				1490EFF822249CDC00866151 /* Resources */,
+				1490F00A2224A0C500866151 /* Sources */,
+				1490F00B2224A0C500866151 /* Frameworks */,
+				1490F00C2224A0C500866151 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				1490F00022249CDC00866151 /* PBXTargetDependency */,
+				1490F0142224A0C500866151 /* PBXTargetDependency */,
 			);
 			name = MidiaTests;
 			productName = MidiaTests;
-			productReference = 1490EFFA22249CDC00866151 /* MidiaTests.xctest */;
+			productReference = 1490F00E2224A0C500866151 /* MidiaTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -182,7 +183,7 @@
 					1490EFDA22248C5F00866151 = {
 						CreatedOnToolsVersion = 10.1;
 					};
-					1490EFF922249CDC00866151 = {
+					1490F00D2224A0C500866151 = {
 						CreatedOnToolsVersion = 10.1;
 						TestTargetID = 1490EFDA22248C5F00866151;
 					};
@@ -202,7 +203,7 @@
 			projectRoot = "";
 			targets = (
 				1490EFDA22248C5F00866151 /* Midia */,
-				1490EFF922249CDC00866151 /* MidiaTests */,
+				1490F00D2224A0C500866151 /* MidiaTests */,
 			);
 		};
 /* End PBXProject section */
@@ -218,7 +219,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1490EFF822249CDC00866151 /* Resources */ = {
+		1490F00C2224A0C500866151 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -238,21 +239,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1490EFF622249CDC00866151 /* Sources */ = {
+		1490F00A2224A0C500866151 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1490EFFD22249CDC00866151 /* MidiaTests.swift in Sources */,
+				1490F01A2224A15C00866151 /* Book.swift in Sources */,
+				1490F0192224A0E300866151 /* BookTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		1490F00022249CDC00866151 /* PBXTargetDependency */ = {
+		1490F0142224A0C500866151 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 1490EFDA22248C5F00866151 /* Midia */;
-			targetProxy = 1490EFFF22249CDC00866151 /* PBXContainerItemProxy */;
+			targetProxy = 1490F0132224A0C500866151 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -428,7 +430,7 @@
 			};
 			name = Release;
 		};
-		1490F00222249CDC00866151 /* Debug */ = {
+		1490F0162224A0C500866151 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -448,7 +450,7 @@
 			};
 			name = Debug;
 		};
-		1490F00322249CDC00866151 /* Release */ = {
+		1490F0172224A0C500866151 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -489,11 +491,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1490F00122249CDC00866151 /* Build configuration list for PBXNativeTarget "MidiaTests" */ = {
+		1490F0152224A0C500866151 /* Build configuration list for PBXNativeTarget "MidiaTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1490F00222249CDC00866151 /* Debug */,
-				1490F00322249CDC00866151 /* Release */,
+				1490F0162224A0C500866151 /* Debug */,
+				1490F0172224A0C500866151 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
