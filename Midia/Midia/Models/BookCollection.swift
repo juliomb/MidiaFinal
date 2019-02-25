@@ -12,6 +12,11 @@ struct BookCollection {
 
     let kind: String
     let totalItems: Int
-    let item: [Book]?
+    let items: [Book]?
 
+}
+
+extension BookCollection: Decodable {
+
+    
 }
