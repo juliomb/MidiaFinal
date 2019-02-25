@@ -23,5 +23,39 @@ struct Book {
 }
 
 extension Book: Decodable {
-    
+
+    enum CodingKeys: String, CodingKey {
+        case bookId = "id"
+        case volumeInfo
+        case title
+        case authors
+        case publishedDate
+        case description
+        case imageLinks
+        case coverURL = "thumbnail"
+        case rating = "averageRating"
+        case numberOfReviews = "ratingsCount"
+        case saleInfo
+        case listPrice
+        case price = "amount"
+    }
+
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+
+        bookId = try container.decode(String.self, forKey: .bookId)
+
+        let volumeInfo = try container.nestedContainer(keyedBy: CodingKeys.self, forKey: .volumeInfo)
+        title = try volumeInfo.decode(String.self, forKey: .title)
+
+        // TODO: completar en casa o mañana
+        authors = nil
+        publishedDate = nil
+        description = nil
+        coverURL = nil
+        rating = nil
+        numberOfReviews = nil
+        price = nil
+    }
+
 }

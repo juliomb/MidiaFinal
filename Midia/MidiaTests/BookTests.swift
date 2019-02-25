@@ -27,6 +27,9 @@ class BookTests: XCTestCase {
             let decoder = JSONDecoder()
             let bookCollection = try decoder.decode(BookCollection.self, from: data)
             XCTAssertNotNil(bookCollection)
+            let firstBook = bookCollection.items?.first!
+            XCTAssertNotNil(firstBook?.bookId)
+            XCTAssertNotNil(firstBook?.title)
         } catch {
             XCTFail()
         }
