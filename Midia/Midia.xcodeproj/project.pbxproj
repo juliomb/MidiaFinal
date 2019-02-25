@@ -15,6 +15,7 @@
 		1490EFF52224914D00866151 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1490EFF42224914D00866151 /* Book.swift */; };
 		1490F0192224A0E300866151 /* BookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1490F0182224A0E300866151 /* BookTests.swift */; };
 		1490F01A2224A15C00866151 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1490EFF42224914D00866151 /* Book.swift */; };
+		1490F01D2224A2D300866151 /* book-search-response.json in Resources */ = {isa = PBXBuildFile; fileRef = 1490F01C2224A2D300866151 /* book-search-response.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +40,7 @@
 		1490F00E2224A0C500866151 /* MidiaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MidiaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1490F0122224A0C500866151 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1490F0182224A0E300866151 /* BookTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTests.swift; sourceTree = "<group>"; };
+		1490F01C2224A2D300866151 /* book-search-response.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "book-search-response.json"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,10 +128,19 @@
 		1490F00F2224A0C500866151 /* MidiaTests */ = {
 			isa = PBXGroup;
 			children = (
+				1490F01B2224A2A900866151 /* Resources */,
 				1490F0122224A0C500866151 /* Info.plist */,
 				1490F0182224A0E300866151 /* BookTests.swift */,
 			);
 			path = MidiaTests;
+			sourceTree = "<group>";
+		};
+		1490F01B2224A2A900866151 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1490F01C2224A2D300866151 /* book-search-response.json */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -223,6 +234,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1490F01D2224A2D300866151 /* book-search-response.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
