@@ -16,6 +16,8 @@
 		1490F0192224A0E300866151 /* BookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1490F0182224A0E300866151 /* BookTests.swift */; };
 		1490F01A2224A15C00866151 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1490EFF42224914D00866151 /* Book.swift */; };
 		1490F01D2224A2D300866151 /* book-search-response.json in Resources */ = {isa = PBXBuildFile; fileRef = 1490F01C2224A2D300866151 /* book-search-response.json */; };
+		1490F01F2224A37700866151 /* BookCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1490F01E2224A37700866151 /* BookCollection.swift */; };
+		1490F0202224A37700866151 /* BookCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1490F01E2224A37700866151 /* BookCollection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +43,7 @@
 		1490F0122224A0C500866151 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1490F0182224A0E300866151 /* BookTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTests.swift; sourceTree = "<group>"; };
 		1490F01C2224A2D300866151 /* book-search-response.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "book-search-response.json"; sourceTree = "<group>"; };
+		1490F01E2224A37700866151 /* BookCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCollection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				1490EFF42224914D00866151 /* Book.swift */,
+				1490F01E2224A37700866151 /* BookCollection.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -247,6 +251,7 @@
 			files = (
 				1490EFE122248C5F00866151 /* ViewController.swift in Sources */,
 				1490EFDF22248C5F00866151 /* AppDelegate.swift in Sources */,
+				1490F01F2224A37700866151 /* BookCollection.swift in Sources */,
 				1490EFF52224914D00866151 /* Book.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -257,6 +262,7 @@
 			files = (
 				1490F01A2224A15C00866151 /* Book.swift in Sources */,
 				1490F0192224A0E300866151 /* BookTests.swift in Sources */,
+				1490F0202224A37700866151 /* BookCollection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
