@@ -13,7 +13,18 @@
 		1490EFE622248C6000866151 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1490EFE522248C6000866151 /* Assets.xcassets */; };
 		1490EFE922248C6000866151 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1490EFE722248C6000866151 /* LaunchScreen.storyboard */; };
 		1490EFF52224914D00866151 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1490EFF42224914D00866151 /* Book.swift */; };
+		1490EFFD22249CDC00866151 /* MidiaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1490EFFC22249CDC00866151 /* MidiaTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1490EFFF22249CDC00866151 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1490EFD322248C5F00866151 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1490EFDA22248C5F00866151;
+			remoteInfo = Midia;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		1490EFDB22248C5F00866151 /* Midia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Midia.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -24,10 +35,20 @@
 		1490EFE822248C6000866151 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1490EFEA22248C6000866151 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1490EFF42224914D00866151 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		1490EFFA22249CDC00866151 /* MidiaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MidiaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1490EFFC22249CDC00866151 /* MidiaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MidiaTests.swift; sourceTree = "<group>"; };
+		1490EFFE22249CDC00866151 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		1490EFD822248C5F00866151 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1490EFF722249CDC00866151 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -41,6 +62,7 @@
 			isa = PBXGroup;
 			children = (
 				1490EFDD22248C5F00866151 /* Midia */,
+				1490EFFB22249CDC00866151 /* MidiaTests */,
 				1490EFDC22248C5F00866151 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -49,6 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				1490EFDB22248C5F00866151 /* Midia.app */,
+				1490EFFA22249CDC00866151 /* MidiaTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -99,6 +122,15 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		1490EFFB22249CDC00866151 /* MidiaTests */ = {
+			isa = PBXGroup;
+			children = (
+				1490EFFC22249CDC00866151 /* MidiaTests.swift */,
+				1490EFFE22249CDC00866151 /* Info.plist */,
+			);
+			path = MidiaTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -119,6 +151,24 @@
 			productReference = 1490EFDB22248C5F00866151 /* Midia.app */;
 			productType = "com.apple.product-type.application";
 		};
+		1490EFF922249CDC00866151 /* MidiaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1490F00122249CDC00866151 /* Build configuration list for PBXNativeTarget "MidiaTests" */;
+			buildPhases = (
+				1490EFF622249CDC00866151 /* Sources */,
+				1490EFF722249CDC00866151 /* Frameworks */,
+				1490EFF822249CDC00866151 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1490F00022249CDC00866151 /* PBXTargetDependency */,
+			);
+			name = MidiaTests;
+			productName = MidiaTests;
+			productReference = 1490EFFA22249CDC00866151 /* MidiaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -131,6 +181,10 @@
 				TargetAttributes = {
 					1490EFDA22248C5F00866151 = {
 						CreatedOnToolsVersion = 10.1;
+					};
+					1490EFF922249CDC00866151 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 1490EFDA22248C5F00866151;
 					};
 				};
 			};
@@ -148,6 +202,7 @@
 			projectRoot = "";
 			targets = (
 				1490EFDA22248C5F00866151 /* Midia */,
+				1490EFF922249CDC00866151 /* MidiaTests */,
 			);
 		};
 /* End PBXProject section */
@@ -160,6 +215,13 @@
 				1490EFE922248C6000866151 /* LaunchScreen.storyboard in Resources */,
 				1490EFE622248C6000866151 /* Assets.xcassets in Resources */,
 				1490EFE422248C5F00866151 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1490EFF822249CDC00866151 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,7 +238,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1490EFF622249CDC00866151 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1490EFFD22249CDC00866151 /* MidiaTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1490F00022249CDC00866151 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1490EFDA22248C5F00866151 /* Midia */;
+			targetProxy = 1490EFFF22249CDC00866151 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		1490EFE222248C5F00866151 /* Main.storyboard */ = {
@@ -350,6 +428,46 @@
 			};
 			name = Release;
 		};
+		1490F00222249CDC00866151 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3BD2Z379VB;
+				INFOPLIST_FILE = MidiaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yuju.MidiaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Midia.app/Midia";
+			};
+			name = Debug;
+		};
+		1490F00322249CDC00866151 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3BD2Z379VB;
+				INFOPLIST_FILE = MidiaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yuju.MidiaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Midia.app/Midia";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -367,6 +485,15 @@
 			buildConfigurations = (
 				1490EFEE22248C6000866151 /* Debug */,
 				1490EFEF22248C6000866151 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1490F00122249CDC00866151 /* Build configuration list for PBXNativeTarget "MidiaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1490F00222249CDC00866151 /* Debug */,
+				1490F00322249CDC00866151 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
