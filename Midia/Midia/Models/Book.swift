@@ -45,17 +45,26 @@ extension Book: Decodable {
 
         bookId = try container.decode(String.self, forKey: .bookId)
 
-        let volumeInfo = try container.nestedContainer(keyedBy: CodingKeys.self, forKey: .volumeInfo)
-        title = try volumeInfo.decode(String.self, forKey: .title)
+        let volumeInfoContainer = try container.nestedContainer(keyedBy: CodingKeys.self, forKey: .volumeInfo)
+        title = try volumeInfoContainer.decode(String.self, forKey: .title)
+        authors = try volumeInfoContainer.decodeIfPresent([String].self, forKey: .authors)
+        if let publishedDateString = try volumeInfoContainer.decodeIfPresent(String.self, forKey: .publishedDate) {
+            publishedDate = DateFormatter.booksAPIDateFormatter.date(from: publishedDateString)
+        } else {
+            publishedDate = nil
+        }
+        description = try volumeInfoContainer.decodeIfPresent(String.self, forKey: .description)
 
-        // TODO: completar en casa o mañana
-        authors = nil
-        publishedDate = nil
-        description = nil
-        coverURL = nil
-        rating = nil
-        numberOfReviews = nil
-        price = nil
+        // Es posible que no haya imageLinkContainer, entonces ponemos try? para asegurarnos que está al hacer el decode.
+        let imageLinkContainer = try? volumeInfoContainer.nestedContainer(keyedBy: CodingKeys.self, forKey: .imageLinks)
+        coverURL = try imageLinkContainer?.decodeIfPresent(URL.self, forKey: .coverURL)
+
+        rating = try volumeInfoContainer.decodeIfPresent(Float.self, forKey: .rating)
+        numberOfReviews = try volumeInfoContainer.decodeIfPresent(Int.self, forKey: .numberOfReviews)
+
+        let saleInfoContainer = try? container.nestedContainer(keyedBy: CodingKeys.self, forKey: .saleInfo)
+        let listPriceContainer = try? saleInfoContainer?.nestedContainer(keyedBy: CodingKeys.self, forKey: .listPrice)
+        price = try listPriceContainer??.decodeIfPresent(Float.self, forKey: .price)
     }
 
 }
