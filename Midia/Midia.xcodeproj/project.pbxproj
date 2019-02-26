@@ -77,6 +77,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		1427A5B12225FD9D000F2E59 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				1427A5AF2225FCB7000F2E59 /* MediaItemCollectionViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		1490EFD222248C5F00866151 = {
 			isa = PBXGroup;
 			children = (
@@ -121,7 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				1427A58F2225E04C000F2E59 /* HomeViewController.swift */,
-				1427A5AF2225FCB7000F2E59 /* MediaItemCollectionViewCell.swift */,
+				1427A5B12225FD9D000F2E59 /* Cells */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";

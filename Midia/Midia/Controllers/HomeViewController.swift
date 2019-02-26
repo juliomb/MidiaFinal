@@ -10,6 +10,8 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    let mediaItemCellIdentifier = "mediaItemCell"
+
     @IBOutlet weak var collectionView: UICollectionView!
 
 }
@@ -25,7 +27,11 @@ extension HomeViewController: UICollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return UICollectionViewCell() // TODO
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: mediaItemCellIdentifier, for: indexPath) as? MediaItemCollectionViewCell else {
+            fatalError()
+        }
+        cell.titleLabel.text = "Hola mundo!!!"
+        return cell
     }
 
 }
