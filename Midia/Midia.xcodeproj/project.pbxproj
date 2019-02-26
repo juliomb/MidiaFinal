@@ -10,6 +10,7 @@
 		1427A58D2225D154000F2E59 /* DateFormatter+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1427A58C2225D154000F2E59 /* DateFormatter+Custom.swift */; };
 		1427A58E2225D3DF000F2E59 /* DateFormatter+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1427A58C2225D154000F2E59 /* DateFormatter+Custom.swift */; };
 		1427A5902225E04C000F2E59 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1427A58F2225E04C000F2E59 /* HomeViewController.swift */; };
+		1427A5B02225FCB7000F2E59 /* MediaItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1427A5AF2225FCB7000F2E59 /* MediaItemCollectionViewCell.swift */; };
 		1490EFDF22248C5F00866151 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1490EFDE22248C5F00866151 /* AppDelegate.swift */; };
 		1490EFE422248C5F00866151 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1490EFE222248C5F00866151 /* Main.storyboard */; };
 		1490EFE622248C6000866151 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1490EFE522248C6000866151 /* Assets.xcassets */; };
@@ -35,6 +36,7 @@
 /* Begin PBXFileReference section */
 		1427A58C2225D154000F2E59 /* DateFormatter+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Custom.swift"; sourceTree = "<group>"; };
 		1427A58F2225E04C000F2E59 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		1427A5AF2225FCB7000F2E59 /* MediaItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		1490EFDB22248C5F00866151 /* Midia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Midia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1490EFDE22248C5F00866151 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1490EFE322248C5F00866151 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				1427A58F2225E04C000F2E59 /* HomeViewController.swift */,
+				1427A5AF2225FCB7000F2E59 /* MediaItemCollectionViewCell.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 				1490EFDF22248C5F00866151 /* AppDelegate.swift in Sources */,
 				1490F01F2224A37700866151 /* BookCollection.swift in Sources */,
 				1490EFF52224914D00866151 /* Book.swift in Sources */,
+				1427A5B02225FCB7000F2E59 /* MediaItemCollectionViewCell.swift in Sources */,
 				1427A58D2225D154000F2E59 /* DateFormatter+Custom.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
