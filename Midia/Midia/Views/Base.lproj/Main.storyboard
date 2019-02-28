@@ -68,18 +68,34 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="NRq-ss-Onl"/>
                                 </connections>
                             </collectionView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="p7N-lM-TeM">
+                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                                <color key="color" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="☹️" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rd2-td-xBM">
+                                <rect key="frame" x="165" y="309.5" width="45" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Rd2-td-xBM" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="2UH-pH-cUP"/>
                             <constraint firstItem="UiW-Qb-zH5" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="5rF-qV-d0m"/>
                             <constraint firstItem="UiW-Qb-zH5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="870-dt-lSN"/>
+                            <constraint firstItem="p7N-lM-TeM" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="FeM-3h-J8h"/>
                             <constraint firstItem="UiW-Qb-zH5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Jcm-IM-n5n"/>
+                            <constraint firstItem="Rd2-td-xBM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Q9v-IB-fqB"/>
                             <constraint firstItem="UiW-Qb-zH5" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="gDM-0V-wJQ"/>
+                            <constraint firstItem="p7N-lM-TeM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gFp-pp-DZs"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicatorView" destination="p7N-lM-TeM" id="e14-gX-WzM"/>
                         <outlet property="collectionView" destination="UiW-Qb-zH5" id="Ndp-Xt-Kdf"/>
+                        <outlet property="failureEmojiLabel" destination="Rd2-td-xBM" id="Cig-wp-BBV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

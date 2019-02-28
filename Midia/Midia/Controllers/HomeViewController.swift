@@ -16,11 +16,21 @@ class HomeViewController: UIViewController {
     private var mediaItems: [MediaItemProvidable] = []
 
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
+    @IBOutlet weak var failureEmojiLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        mediaItems = mediaItemProvider.getHomeMediaItems()
+        activityIndicatorView.isHidden = false
+        mediaItemProvider.getHomeMediaItems(onSuccess: { [weak self] (mediaItems) in
+            self?.mediaItems = mediaItems
+            self?.collectionView.reloadData()
+            self?.activityIndicatorView.isHidden = true
+        }) { [weak self] (error) in
+            self?.activityIndicatorView.isHidden = true
+            self?.failureEmojiLabel.isHidden = false
+        }
     }
 
 }
