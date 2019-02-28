@@ -12,9 +12,16 @@ class HomeViewController: UIViewController {
 
     let mediaItemCellIdentifier = "mediaItemCell"
 
-    var mediaItems: [MediaItemProvidable] = []
+    var mediaItemProvider: MediaItemProvider!
+    private var mediaItems: [MediaItemProvidable] = []
 
     @IBOutlet weak var collectionView: UICollectionView!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        mediaItems = mediaItemProvider.getHomeMediaItems()
+    }
 
 }
 
@@ -33,7 +40,7 @@ extension HomeViewController: UICollectionViewDataSource {
             fatalError()
         }
         let mediaItem = mediaItems[indexPath.item]
-        cell.titleLabel.text = mediaItem.title
+        cell.mediaItem = mediaItem
         return cell
     }
 

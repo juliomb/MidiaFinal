@@ -15,6 +15,12 @@
 		1427A5DF222873BD000F2E59 /* MediaItemProvidable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1427A5DD222873BD000F2E59 /* MediaItemProvidable.swift */; };
 		1427A5E12228787F000F2E59 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1427A5E02228787F000F2E59 /* Game.swift */; };
 		1427A5E22228787F000F2E59 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1427A5E02228787F000F2E59 /* Game.swift */; };
+		1427A5E522287C5A000F2E59 /* MediaItemProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1427A5E422287C5A000F2E59 /* MediaItemProvider.swift */; };
+		1427A5E622287C5A000F2E59 /* MediaItemProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1427A5E422287C5A000F2E59 /* MediaItemProvider.swift */; };
+		1427A5E822287CDB000F2E59 /* MediaItemKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1427A5E722287CDB000F2E59 /* MediaItemKind.swift */; };
+		1427A5E922287CDB000F2E59 /* MediaItemKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1427A5E722287CDB000F2E59 /* MediaItemKind.swift */; };
+		1427A5EB22287DDF000F2E59 /* MediaItemAPIConsumable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1427A5EA22287DDF000F2E59 /* MediaItemAPIConsumable.swift */; };
+		1427A5EC22287DDF000F2E59 /* MediaItemAPIConsumable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1427A5EA22287DDF000F2E59 /* MediaItemAPIConsumable.swift */; };
 		1490EFDF22248C5F00866151 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1490EFDE22248C5F00866151 /* AppDelegate.swift */; };
 		1490EFE422248C5F00866151 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1490EFE222248C5F00866151 /* Main.storyboard */; };
 		1490EFE622248C6000866151 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1490EFE522248C6000866151 /* Assets.xcassets */; };
@@ -43,6 +49,9 @@
 		1427A5AF2225FCB7000F2E59 /* MediaItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		1427A5DD222873BD000F2E59 /* MediaItemProvidable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaItemProvidable.swift; sourceTree = "<group>"; };
 		1427A5E02228787F000F2E59 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		1427A5E422287C5A000F2E59 /* MediaItemProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaItemProvider.swift; sourceTree = "<group>"; };
+		1427A5E722287CDB000F2E59 /* MediaItemKind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaItemKind.swift; sourceTree = "<group>"; };
+		1427A5EA22287DDF000F2E59 /* MediaItemAPIConsumable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaItemAPIConsumable.swift; sourceTree = "<group>"; };
 		1490EFDB22248C5F00866151 /* Midia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Midia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1490EFDE22248C5F00866151 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1490EFE322248C5F00866151 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -95,8 +104,17 @@
 			isa = PBXGroup;
 			children = (
 				1427A5DD222873BD000F2E59 /* MediaItemProvidable.swift */,
+				1427A5EA22287DDF000F2E59 /* MediaItemAPIConsumable.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		1427A5E322287C39000F2E59 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				1427A5E422287C5A000F2E59 /* MediaItemProvider.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		1490EFD222248C5F00866151 = {
@@ -125,6 +143,7 @@
 				1490EFF122248E5600866151 /* Controllers */,
 				1427A58B2225D129000F2E59 /* Extensions */,
 				1490EFF222248E6000866151 /* Models */,
+				1427A5E322287C39000F2E59 /* Networking */,
 				1427A5DC2228738A000F2E59 /* Protocols */,
 				1490EFF322248EF500866151 /* Resources */,
 				1490EFF022248E4E00866151 /* Views */,
@@ -152,6 +171,7 @@
 		1490EFF222248E6000866151 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				1427A5E722287CDB000F2E59 /* MediaItemKind.swift */,
 				1490EFF42224914D00866151 /* Book.swift */,
 				1490F01E2224A37700866151 /* BookCollection.swift */,
 				1427A5E02228787F000F2E59 /* Game.swift */,
@@ -289,13 +309,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				1427A5902225E04C000F2E59 /* HomeViewController.swift in Sources */,
+				1427A5EB22287DDF000F2E59 /* MediaItemAPIConsumable.swift in Sources */,
 				1490EFDF22248C5F00866151 /* AppDelegate.swift in Sources */,
 				1427A5DE222873BD000F2E59 /* MediaItemProvidable.swift in Sources */,
+				1427A5E522287C5A000F2E59 /* MediaItemProvider.swift in Sources */,
 				1490F01F2224A37700866151 /* BookCollection.swift in Sources */,
 				1490EFF52224914D00866151 /* Book.swift in Sources */,
 				1427A5B02225FCB7000F2E59 /* MediaItemCollectionViewCell.swift in Sources */,
 				1427A58D2225D154000F2E59 /* DateFormatter+Custom.swift in Sources */,
 				1427A5E12228787F000F2E59 /* Game.swift in Sources */,
+				1427A5E822287CDB000F2E59 /* MediaItemKind.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,12 +326,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1427A5EC22287DDF000F2E59 /* MediaItemAPIConsumable.swift in Sources */,
 				1490F01A2224A15C00866151 /* Book.swift in Sources */,
 				1427A5E22228787F000F2E59 /* Game.swift in Sources */,
 				1427A5DF222873BD000F2E59 /* MediaItemProvidable.swift in Sources */,
+				1427A5E922287CDB000F2E59 /* MediaItemKind.swift in Sources */,
 				1427A58E2225D3DF000F2E59 /* DateFormatter+Custom.swift in Sources */,
 				1490F0192224A0E300866151 /* BookTests.swift in Sources */,
 				1490F0202224A37700866151 /* BookCollection.swift in Sources */,
+				1427A5E622287C5A000F2E59 /* MediaItemProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

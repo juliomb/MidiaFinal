@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             fatalError("Wrong initial setup")
         }
 
-        homeViewController.mediaItems = [Book(bookId: "1", title: "Primer book"), Book(bookId: "2", title: "Second book"), Game(), Game()]
+        homeViewController.mediaItemProvider = MediaItemProvider(withMediaItemKind: .book)
         return true
     }
 

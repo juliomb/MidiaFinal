@@ -10,7 +10,14 @@ import UIKit
 
 class MediaItemCollectionViewCell: UICollectionViewCell {
 
-    @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet private weak var imageView: UIImageView!
+    @IBOutlet private weak var titleLabel: UILabel!
+
+    var mediaItem: MediaItemProvidable! {
+        didSet {
+            titleLabel.text = mediaItem.title
+            // TODO: poner imagen
+        }
+    }
 
 }
