@@ -17,6 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         guard let homeViewController = window?.rootViewController as? HomeViewController else {
             fatalError("Wrong initial setup")
         }
+
+        homeViewController.mediaItems = [Book(bookId: "1", title: "Primer book"), Book(bookId: "2", title: "Second book"), Game(), Game()]
         return true
     }
 

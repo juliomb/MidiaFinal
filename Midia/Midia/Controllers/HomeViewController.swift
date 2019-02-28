@@ -12,6 +12,8 @@ class HomeViewController: UIViewController {
 
     let mediaItemCellIdentifier = "mediaItemCell"
 
+    var mediaItems: [MediaItemProvidable] = []
+
     @IBOutlet weak var collectionView: UICollectionView!
 
 }
@@ -23,14 +25,15 @@ extension HomeViewController: UICollectionViewDelegate {
 extension HomeViewController: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1 // TODO
+        return mediaItems.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: mediaItemCellIdentifier, for: indexPath) as? MediaItemCollectionViewCell else {
             fatalError()
         }
-        cell.titleLabel.text = "Hola mundo!!!"
+        let mediaItem = mediaItems[indexPath.item]
+        cell.titleLabel.text = mediaItem.title
         return cell
     }
 
