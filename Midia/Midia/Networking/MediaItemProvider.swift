@@ -48,7 +48,7 @@ class MockMediaItemAPIConsumer: MediaItemAPIConsumable {
         let queue = DispatchQueue.global()
         queue.async {
             // llama a la API de terceros
-            Thread.sleep(forTimeInterval: 5)
+            Thread.sleep(forTimeInterval: 2)
             let mainQueue = DispatchQueue.main
             mainQueue.async {
                 failure(nil)

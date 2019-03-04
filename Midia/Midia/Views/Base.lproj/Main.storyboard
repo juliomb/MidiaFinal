@@ -78,17 +78,27 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TfN-zw-ggy">
+                                <rect key="frame" x="15" y="367.5" width="345" height="20"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="TfN-zw-ggy" firstAttribute="top" secondItem="Rd2-td-xBM" secondAttribute="bottom" constant="10" id="0gj-z1-w5f"/>
                             <constraint firstItem="Rd2-td-xBM" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="2UH-pH-cUP"/>
                             <constraint firstItem="UiW-Qb-zH5" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="5rF-qV-d0m"/>
                             <constraint firstItem="UiW-Qb-zH5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="870-dt-lSN"/>
+                            <constraint firstItem="TfN-zw-ggy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="FGQ-sY-49B"/>
                             <constraint firstItem="p7N-lM-TeM" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="FeM-3h-J8h"/>
                             <constraint firstItem="UiW-Qb-zH5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Jcm-IM-n5n"/>
                             <constraint firstItem="Rd2-td-xBM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Q9v-IB-fqB"/>
+                            <constraint firstItem="TfN-zw-ggy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Uid-yV-R7c"/>
                             <constraint firstItem="UiW-Qb-zH5" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="gDM-0V-wJQ"/>
                             <constraint firstItem="p7N-lM-TeM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gFp-pp-DZs"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TfN-zw-ggy" secondAttribute="trailing" constant="15" id="gYg-rb-xm2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -96,6 +106,7 @@
                         <outlet property="activityIndicatorView" destination="p7N-lM-TeM" id="e14-gX-WzM"/>
                         <outlet property="collectionView" destination="UiW-Qb-zH5" id="Ndp-Xt-Kdf"/>
                         <outlet property="failureEmojiLabel" destination="Rd2-td-xBM" id="Cig-wp-BBV"/>
+                        <outlet property="statusLabel" destination="TfN-zw-ggy" id="zFw-qm-fXH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
