@@ -83,8 +83,24 @@ extension Book: Decodable {
 
 extension Book: MediaItemProvidable {
 
+    var mediaItemId: String {
+        return bookId
+    }
+
     var imageURL: URL? {
         return coverURL
+    }
+
+}
+
+extension Book: MediaItemDetailedProvidable {
+    
+    var creatorName: String? {
+        return authors?.joined(separator: ", ") // [Patrick, Juan] ->  "Patrick, Juan"
+    }
+
+    var creationDate: Date? {
+        return publishedDate
     }
 
 }

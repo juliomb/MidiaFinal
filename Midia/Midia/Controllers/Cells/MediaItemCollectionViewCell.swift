@@ -23,4 +23,10 @@ class MediaItemCollectionViewCell: UICollectionViewCell {
         }
     }
 
+    override func prepareForReuse() {
+        super.prepareForReuse()
+
+        imageView.sd_cancelCurrentImageLoad()
+    }
+
 }

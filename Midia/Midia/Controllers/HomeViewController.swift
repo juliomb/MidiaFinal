@@ -72,6 +72,17 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: UICollectionViewDelegate {
 
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let detailViewController = UIStoryboard(name: "Detail", bundle: nil).instantiateInitialViewController() as? DetailViewController else {
+            fatalError()
+        }
+
+        let mediaItem = mediaItems[indexPath.item]
+        detailViewController.mediaItemId = mediaItem.mediaItemId
+        detailViewController.mediaItemProvider = mediaItemProvider
+        present(detailViewController, animated: true, completion: nil)
+    }
+
 }
 
 extension HomeViewController: UICollectionViewDataSource {
