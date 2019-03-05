@@ -31,4 +31,25 @@ class GoogleBooksAPIConsumerAlamofire: MediaItemAPIConsumable {
 
     }
 
+    func getMediaItems(withQueryParams queryParams: String, success: @escaping ([MediaItemProvidable]) -> Void, failure: @escaping (Error?) -> Void) {
+        let paramsList = queryParams.components(separatedBy: " ")
+
+        Alamofire.request(GoogleBooksAPIConstants.getAbsoluteURL(withQueryParams: paramsList)).responseData { (response) in
+
+            switch response.result {
+            case .failure(let error):
+                failure(error)
+            case .success(let value):
+                do {
+                    let decoder = JSONDecoder()
+                    let bookCollection = try decoder.decode(BookCollection.self, from: value)
+                    success(bookCollection.items ?? [])
+                } catch {
+                    failure(error) // Error parseando, lo enviamos para arriba
+                }
+            }
+        }
+
+    }
+
 }
