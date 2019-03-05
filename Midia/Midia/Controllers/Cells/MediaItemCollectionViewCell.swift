@@ -16,7 +16,9 @@ class MediaItemCollectionViewCell: UICollectionViewCell {
     var mediaItem: MediaItemProvidable! {
         didSet {
             titleLabel.text = mediaItem.title
-            // TODO: poner imagen
+            if let url = mediaItem.imageURL {
+                imageView.loadImage(fromURL: url)
+            }
         }
     }
 
