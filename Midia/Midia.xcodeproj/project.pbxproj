@@ -26,6 +26,7 @@
 		1432C4AF222F1CB80032BAA3 /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1432C4AE222F1CB80032BAA3 /* Detail.storyboard */; };
 		1432C4B1222F1CF30032BAA3 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1432C4B0222F1CF30032BAA3 /* DetailViewController.swift */; };
 		1432C4B3222F39460032BAA3 /* MediaItemDetailedProvidable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1432C4B2222F39460032BAA3 /* MediaItemDetailedProvidable.swift */; };
+		144E66362236FB11005770BE /* MediaItemDetailedProvidable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1432C4B2222F39460032BAA3 /* MediaItemDetailedProvidable.swift */; };
 		14509F05222DC8CA00D49881 /* GoogleBooksAPIConsumerURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14509F04222DC8CA00D49881 /* GoogleBooksAPIConsumerURLSession.swift */; };
 		14509F07222DD62100D49881 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14509F06222DD62100D49881 /* Constants.swift */; };
 		14509F09222DDE5100D49881 /* GoogleBooksAPIConsumerAlamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14509F08222DDE5100D49881 /* GoogleBooksAPIConsumerAlamofire.swift */; };
@@ -481,6 +482,7 @@
 				1427A5DF222873BD000F2E59 /* MediaItemProvidable.swift in Sources */,
 				1427A5E922287CDB000F2E59 /* MediaItemKind.swift in Sources */,
 				1427A58E2225D3DF000F2E59 /* DateFormatter+Custom.swift in Sources */,
+				144E66362236FB11005770BE /* MediaItemDetailedProvidable.swift in Sources */,
 				1490F0192224A0E300866151 /* BookTests.swift in Sources */,
 				14509F0E222DE31700D49881 /* MediaItemProviderTests.swift in Sources */,
 				1490F0202224A37700866151 /* BookCollection.swift in Sources */,

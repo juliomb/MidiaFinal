@@ -64,7 +64,7 @@ extension SearchViewController: UICollectionViewDataSource {
 extension SearchViewController: UISearchBarDelegate {
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        guard let queryParams = searchBar.text else {
+        guard let queryParams = searchBar.text, !queryParams.isEmpty else {
             return
         }
 

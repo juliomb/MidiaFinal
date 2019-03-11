@@ -13,7 +13,7 @@ class GoogleBooksAPIConsumerAlamofire: MediaItemAPIConsumable {
 
     func getLatestMediaItems(onSuccess success: @escaping ([MediaItemProvidable]) -> Void, failure: @escaping (Error?) -> Void) {
 
-        Alamofire.request(GoogleBooksAPIConstants.getAbsoluteURL(withQueryParams: ["2010"])).responseData { (response) in
+        Alamofire.request(GoogleBooksAPIConstants.getAbsoluteURL(withQueryParams: ["2019"])).responseData { (response) in
 
             switch response.result {
             case .failure(let error):
@@ -50,6 +50,25 @@ class GoogleBooksAPIConsumerAlamofire: MediaItemAPIConsumable {
             }
         }
 
+    }
+
+    func getMediaItem(byId mediaItemId: String, success: @escaping (MediaItemDetailedProvidable) -> Void, failure: @escaping (Error?) -> Void) {
+
+        Alamofire.request(GoogleBooksAPIConstants.urlForBook(withId: mediaItemId)).responseData { (response) in
+
+            switch response.result {
+            case .failure(let error):
+                failure(error)
+            case .success(let value):
+                do {
+                    let decoder = JSONDecoder()
+                    let book = try decoder.decode(Book.self, from: value)
+                    success(book)
+                } catch {
+                    failure(error) // Error parseando, lo enviamos para arriba
+                }
+            }
+        }
     }
 
 }

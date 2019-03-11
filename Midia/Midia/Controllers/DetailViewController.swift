@@ -30,10 +30,24 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
 
         loadingView.isHidden = false
-        // pedirle al media provider el detalle del media item con el id recibido
-        detailedMediaItem = Game()
-        loadingView.isHidden = true
-        syncViewWithModel()
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        mediaItemProvider.getMediaItem(byId: mediaItemId, success: { [weak self] (detailedMediaItem) in
+            self?.loadingView.isHidden = true
+            self?.detailedMediaItem = detailedMediaItem
+            self?.syncViewWithModel()
+        }) { [weak self] (error) in
+            self?.loadingView.isHidden = true
+            // Creo una alerta, le añado acción con handler, presento la alerta
+            let alertController = UIAlertController(title: nil, message: "Error recuperando media item.", preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: { (_) in
+                self?.dismiss(animated: true, completion: nil)
+            }))
+            self?.present(alertController, animated: true, completion: nil)
+        }
     }
 
     private func syncViewWithModel() {

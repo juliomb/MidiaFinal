@@ -48,4 +48,15 @@ class MediaItemProvider {
         }
     }
 
+
+    func getMediaItem(byId mediaItemId: String, success: @escaping (MediaItemDetailedProvidable) -> Void, failure: @escaping (Error?) -> Void) {
+        apiConsumer.getMediaItem(byId: mediaItemId, success: { (mediaItem) in
+            assert(Thread.current == Thread.main)
+            success(mediaItem)
+        }) { (error) in
+            assert(Thread.current == Thread.main)
+            failure(error)
+        }
+    }
+
 }
