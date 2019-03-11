@@ -23,6 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let currentMediaItemProvider = MediaItemProvider(withMediaItemKind: .book)
         homeViewController.mediaItemProvider = currentMediaItemProvider
         searchViewController.mediaItemProvider = currentMediaItemProvider
+
         return true
     }
 

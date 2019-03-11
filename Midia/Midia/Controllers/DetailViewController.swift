@@ -19,12 +19,15 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var creationDateLabel: UILabel!
     @IBOutlet weak var buyButton: UIButton!
     @IBOutlet weak var ratingsContainerView: UIView!
+    @IBOutlet weak var toggleFavoriteButton: UIButton!
 
     @IBOutlet weak var loadingView: UIView!
 
     var mediaItemId: String!
-    var mediaItemProvider: MediaItemProvider!
+    var mediaItemProvider: MediaItemProvider! // debería ser opcional
     var detailedMediaItem: MediaItemDetailedProvidable?
+
+    var isFavorite: Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,18 +38,27 @@ class DetailViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        mediaItemProvider.getMediaItem(byId: mediaItemId, success: { [weak self] (detailedMediaItem) in
-            self?.loadingView.isHidden = true
-            self?.detailedMediaItem = detailedMediaItem
-            self?.syncViewWithModel()
-        }) { [weak self] (error) in
-            self?.loadingView.isHidden = true
-            // Creo una alerta, le añado acción con handler, presento la alerta
-            let alertController = UIAlertController(title: nil, message: "Error recuperando media item.", preferredStyle: .alert)
-            alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: { (_) in
-                self?.dismiss(animated: true, completion: nil)
-            }))
-            self?.present(alertController, animated: true, completion: nil)
+        if let favorite = StorageManager.shared.getFavorite(byId: mediaItemId) {
+            detailedMediaItem = favorite
+            syncViewWithModel()
+            loadingView.isHidden = true
+            isFavorite = true
+            toggleFavoriteButton.setTitle("Remove favorite", for: .normal)
+
+        } else {
+            mediaItemProvider.getMediaItem(byId: mediaItemId, success: { [weak self] (detailedMediaItem) in
+                self?.loadingView.isHidden = true
+                self?.detailedMediaItem = detailedMediaItem
+                self?.syncViewWithModel()
+            }) { [weak self] (error) in
+                self?.loadingView.isHidden = true
+                // Creo una alerta, le añado acción con handler, presento la alerta
+                let alertController = UIAlertController(title: nil, message: "Error recuperando media item.", preferredStyle: .alert)
+                alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: { (_) in
+                    self?.dismiss(animated: true, completion: nil)
+                }))
+                self?.present(alertController, animated: true, completion: nil)
+            }
         }
     }
 
@@ -98,6 +110,20 @@ class DetailViewController: UIViewController {
 
     @IBAction func didTapCloseButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+    }
+
+    @IBAction func didTapToggleFavorite(_ sender: Any) {
+        guard let favorite = detailedMediaItem else {
+            return
+        }
+        isFavorite.toggle()
+        if isFavorite {
+            StorageManager.shared.add(favorite: favorite)
+            toggleFavoriteButton.setTitle("Remove favorite", for: .normal)
+        } else {
+            StorageManager.shared.remove(favoriteWithId: favorite.mediaItemId)
+            toggleFavoriteButton.setTitle("Add favorite", for: .normal)
+        }
     }
 
 }

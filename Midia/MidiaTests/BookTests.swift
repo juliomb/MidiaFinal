@@ -74,4 +74,22 @@ class BookTests: XCTestCase {
         }
     }
 
+    func testPersistOnUserDefaults() {
+        let userDefaults = UserDefaults.init(suiteName: "tests")!
+        let bookKey = "bookKey"
+        do {
+            let bookData = try encoder.encode(bestBookEver)
+            userDefaults.set(bookData, forKey: bookKey)
+            userDefaults.synchronize()
+            if let retrievedBookData = userDefaults.data(forKey: bookKey) {
+                let decodedBook = try decoder.decode(Book.self, from: retrievedBookData)
+                XCTAssertNotNil(decodedBook)
+            } else {
+                XCTFail()
+            }
+        } catch {
+            XCTFail()
+        }
+    }
+
 }

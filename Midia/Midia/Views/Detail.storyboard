@@ -55,12 +55,15 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qL0-iv-5cT">
-                                <rect key="frame" x="157.66666666666666" y="718" width="60" height="40"/>
+                                <rect key="frame" x="107.66666666666669" y="718" width="160" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="GN7-XK-dfC"/>
-                                    <constraint firstAttribute="width" constant="60" id="vha-Ob-kjh"/>
+                                    <constraint firstAttribute="width" constant="160" id="vha-Ob-kjh"/>
                                 </constraints>
-                                <state key="normal" title="Preview"/>
+                                <state key="normal" title="Add favorite"/>
+                                <connections>
+                                    <action selector="didTapToggleFavorite:" destination="dix-Pd-KBf" eventType="touchUpInside" id="rRC-lx-i0X"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="iaH-z2-HCR">
                                 <rect key="frame" x="166" y="142" width="193" height="180"/>
@@ -167,6 +170,7 @@
                         <outlet property="ratingLabel" destination="4br-aE-jmY" id="0yU-Sb-SNK"/>
                         <outlet property="ratingsContainerView" destination="p8T-bN-pR6" id="JMS-ck-Tim"/>
                         <outlet property="titleLabel" destination="d6c-CN-NQx" id="y1T-6x-KFF"/>
+                        <outlet property="toggleFavoriteButton" destination="qL0-iv-5cT" id="K8N-Rv-gdV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oqy-Ab-lu2" userLabel="First Responder" sceneMemberID="firstResponder"/>
