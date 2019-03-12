@@ -40,6 +40,10 @@
 		14509F0C222DE2BE00D49881 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14509F06222DD62100D49881 /* Constants.swift */; };
 		14509F0E222DE31700D49881 /* MediaItemProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14509F0D222DE31700D49881 /* MediaItemProviderTests.swift */; };
 		14509F10222DE8AD00D49881 /* UIImageView+Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14509F0F222DE8AD00D49881 /* UIImageView+Networking.swift */; };
+		148C6A7F2238513000E4C844 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 148C6A7D2238513000E4C844 /* Model.xcdatamodeld */; };
+		148C6A812238550600E4C844 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148C6A802238550600E4C844 /* CoreDataStack.swift */; };
+		148C6A832238571D00E4C844 /* CoreDataStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148C6A822238571D00E4C844 /* CoreDataStorageManager.swift */; };
+		148C6A85223863BA00E4C844 /* BookManage+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148C6A84223863BA00E4C844 /* BookManage+Mapping.swift */; };
 		1490EFDF22248C5F00866151 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1490EFDE22248C5F00866151 /* AppDelegate.swift */; };
 		1490EFE422248C5F00866151 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1490EFE222248C5F00866151 /* Main.storyboard */; };
 		1490EFE622248C6000866151 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1490EFE522248C6000866151 /* Assets.xcassets */; };
@@ -90,6 +94,10 @@
 		14509F08222DDE5100D49881 /* GoogleBooksAPIConsumerAlamofire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleBooksAPIConsumerAlamofire.swift; sourceTree = "<group>"; };
 		14509F0D222DE31700D49881 /* MediaItemProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaItemProviderTests.swift; sourceTree = "<group>"; };
 		14509F0F222DE8AD00D49881 /* UIImageView+Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Networking.swift"; sourceTree = "<group>"; };
+		148C6A7E2238513000E4C844 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		148C6A802238550600E4C844 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		148C6A822238571D00E4C844 /* CoreDataStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStorageManager.swift; sourceTree = "<group>"; };
+		148C6A84223863BA00E4C844 /* BookManage+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BookManage+Mapping.swift"; sourceTree = "<group>"; };
 		1490EFDB22248C5F00866151 /* Midia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Midia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1490EFDE22248C5F00866151 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1490EFE322248C5F00866151 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -170,10 +178,22 @@
 			isa = PBXGroup;
 			children = (
 				144E663C223715C3005770BE /* FavoritesProvidable.swift */,
-				144E663E22371794005770BE /* UserDefaultStorageManager.swift */,
+				148C6A822238571D00E4C844 /* CoreDataStorageManager.swift */,
 				144E664022371F7E005770BE /* StorageManager.swift */,
+				144E663E22371794005770BE /* UserDefaultStorageManager.swift */,
+				148C6A7C2238510700E4C844 /* Core Data */,
 			);
 			path = Persistence;
+			sourceTree = "<group>";
+		};
+		148C6A7C2238510700E4C844 /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				148C6A7D2238513000E4C844 /* Model.xcdatamodeld */,
+				148C6A802238550600E4C844 /* CoreDataStack.swift */,
+				148C6A84223863BA00E4C844 /* BookManage+Mapping.swift */,
+			);
+			path = "Core Data";
 			sourceTree = "<group>";
 		};
 		1490EFD222248C5F00866151 = {
@@ -477,6 +497,7 @@
 				1427A5902225E04C000F2E59 /* HomeViewController.swift in Sources */,
 				1432C4B1222F1CF30032BAA3 /* DetailViewController.swift in Sources */,
 				14509F09222DDE5100D49881 /* GoogleBooksAPIConsumerAlamofire.swift in Sources */,
+				148C6A85223863BA00E4C844 /* BookManage+Mapping.swift in Sources */,
 				144E663D223715C3005770BE /* FavoritesProvidable.swift in Sources */,
 				144E663822370EED005770BE /* FavoriteTableViewCell.swift in Sources */,
 				1427A5EB22287DDF000F2E59 /* MediaItemAPIConsumable.swift in Sources */,
@@ -484,14 +505,17 @@
 				1427A5DE222873BD000F2E59 /* MediaItemProvidable.swift in Sources */,
 				1427A5E522287C5A000F2E59 /* MediaItemProvider.swift in Sources */,
 				14509F05222DC8CA00D49881 /* GoogleBooksAPIConsumerURLSession.swift in Sources */,
+				148C6A7F2238513000E4C844 /* Model.xcdatamodeld in Sources */,
 				1490F01F2224A37700866151 /* BookCollection.swift in Sources */,
 				14509F07222DD62100D49881 /* Constants.swift in Sources */,
 				1490EFF52224914D00866151 /* Book.swift in Sources */,
 				1432C4AD222F0CDA0032BAA3 /* SearchViewController.swift in Sources */,
+				148C6A832238571D00E4C844 /* CoreDataStorageManager.swift in Sources */,
 				14509F10222DE8AD00D49881 /* UIImageView+Networking.swift in Sources */,
 				1427A5B02225FCB7000F2E59 /* MediaItemCollectionViewCell.swift in Sources */,
 				1427A58D2225D154000F2E59 /* DateFormatter+Custom.swift in Sources */,
 				1432C4B3222F39460032BAA3 /* MediaItemDetailedProvidable.swift in Sources */,
+				148C6A812238550600E4C844 /* CoreDataStack.swift in Sources */,
 				1427A5E12228787F000F2E59 /* Game.swift in Sources */,
 				144E663A2237122B005770BE /* FavoritesViewController.swift in Sources */,
 				1427A5E822287CDB000F2E59 /* MediaItemKind.swift in Sources */,
@@ -777,6 +801,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		148C6A7D2238513000E4C844 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				148C6A7E2238513000E4C844 /* Model.xcdatamodel */,
+			);
+			currentVersion = 148C6A7E2238513000E4C844 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 1490EFD322248C5F00866151 /* Project object */;
 }
