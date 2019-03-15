@@ -65,7 +65,7 @@ Cómo se te ocurre solucionarlo?? Te atreves con ello?? Mañana daré más detal
 
 2. Un poco de Auto-layout. Vamos a crear un nuevo storyboard con una nueva vista de detalle. Siguiendo el siguiente diseño. A ver qué tal se te da el auto-layout sin ruedines!
 
-![](/Users/juliomartinezballester/Desktop/Screen Shot 2019-03-15 at 5.18.29 PM.png)
+![](img/new_detail.png)
 
 
 
