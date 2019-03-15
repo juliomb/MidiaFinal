@@ -15,13 +15,13 @@ Pero no nos agobiemos, paso a paso...
 2. Haz que `Movie` conforme el protocolo `MediaItemProtocol`.
 3. Haz una llamada GET con Postman a la url `https://itunes.apple.com/search/?media=movie&attribute=movieTerm&term=top&country=es`, guarda el resultado en un documento `json` y arrástralo a los tests del proyecto junto con el archivo `book-search-response.json`. Tiene una estructura diferente a las respuestas de la API de Google Books, no te asustes, `Codable` nos ayudará. Puedes cambiar los parámetros de búsqueda si quieres.
 
-![](/Users/juliomartinezballester/Desktop/Screen Shot 2019-03-11 at 12.49.43 AM.png)
+![](img/postman.png)
 
 4. Crea un archivo de tests para las películas. Crea y escribe un test de existencia de tu película favorita (o una que te guste mucho si no puedes elegir solo una como me pasa a mí) quiero saberla =)
 5. Crea un struct `MovieCollection` será parecido a `BookCollection`, pero esta vez utiliza el nombre de las propiedades del json de las películas (`resultCount` y `results`)
 6. Ahora es donde se pone interesante. Crea un `testDecodeMovie` para hacer una serialización, vamos a pasar del `json` al objeto `MovieCollection`. Para ello tienes que hacer que tanto `MovieCollection` como `Movie` conformen el protocol `Decodable`. Utiliza la clase `Book` como referencia. **Recomendación**: decodifica de momento solo las propiedades no opcionales, para que pasen el test, las demás pueden valer `nil` mientras tanto. **Cuidado**, los `ids` de esta API son numéricos, hay que pasarlos a `String`
 
-![](/Users/juliomartinezballester/Desktop/Screen Shot 2019-03-11 at 1.14.32 AM.png)
+![](img/keys.png)
 
 7. Decofifica el resto de propiedades.
 8. Haz que `Movie` conforme el protocol `MediaItemDetailedProtocol`.
@@ -57,7 +57,7 @@ Queremos también ser capaces de guardar películas como favoritos, así que man
 
 ## Extra, extra!!!
 
-/Users/juliomartinezballester/Desktop/Screen Shot 2019-03-15 at 5.08.02 PM.png
+![](img/extra.png)
 
 1. Todo esto es precioso, pero está feo decirle al usuario final que modifique el `AppDelegate` y el `StorageManager` para cambiar entre películas, libros, juegos o lo que sea.
 
