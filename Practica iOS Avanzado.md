@@ -31,11 +31,20 @@ Pero no nos agobiemos, paso a paso...
 Es hora de hacer la capa de networking para este nuevo `MediaITem`. Va a ser extremadamente fácil, gracias a nuestra capa de abstracción.
 
 1. Crea una implementación de nuestro protocolo `MediaItemAPIConsumable` para Alamofire y otra para NSURLSession, puedes llamarlas `ITunesMoviesAPIConsumerAlamofire` y `ITunesMoviesAPIConsumerNSURLSession` por ejemplo.
-2. Añade en el fichero de constantes las un struct para las constantes de la API de iTunes, úsalas en ambas implementaciones. Recuerda añadir los `URLQueryItems` necesarios para construir la URL:
+2. Añade en el fichero de constantes las un struct para las constantes de la API de iTunes, úsalas en ambas implementaciones. Recuerda añadir los `URLQueryItems` necesarios para construir la URL.
+
+Para búsquedas:
 
 ```
 media: movie
 attribute: movieTerm
+country: es
+```
+
+Para recuperar película por id:
+
+```
+id: {{trackId}}
 country: es
 ```
 
