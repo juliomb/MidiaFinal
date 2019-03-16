@@ -70,7 +70,9 @@ Queremos también ser capaces de guardar películas como favoritos, así que man
 
 1. Todo esto es precioso, pero está feo decirle al usuario final que modifique el `AppDelegate` y el `StorageManager` para cambiar entre películas, libros, juegos o lo que sea.
 
-Cómo se te ocurre solucionarlo?? Te atreves con ello?? Mañana daré más detalle y alguna pista.
+Cómo se te ocurre solucionarlo?? Siéntete libre de imaginar soluciones diferentes.
+
+**Sugerencia:** Qué te parece un cuarto tab en el `TabBarController`? Podría tener botones para cambiar el tipo de media item. Entonces también podrías crear una clase que herede de `TabBarController` y sea capaz de cambiar el `MediaItemKind` en el media provider, el `StorageManager` y actualizar sus `viewControllers`.
 
 2. Un poco de Auto-layout. Vamos a crear un nuevo storyboard con una nueva vista de detalle. Siguiendo el siguiente diseño. A ver qué tal se te da el auto-layout sin ruedines!
 
