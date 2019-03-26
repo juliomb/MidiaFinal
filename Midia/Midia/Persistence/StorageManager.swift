@@ -13,6 +13,7 @@ class StorageManager {
     //static let shared: FavoritesProvidable = UserDefaultStorageManager(withMediaItemKind: .book)
     //static let shared: FavoritesProvidable = CoreDataStorageManager(withMediaItemKind: .book)
 
-    static let shared = UserDefaultStorageManager(withMediaItemKind: .movie)
+    //static let shared = UserDefaultStorageManager(withMediaItemKind: .movie)
+    static let shared = CoreDataStorageManager(withMediaItemKind: .movie)
 
 }

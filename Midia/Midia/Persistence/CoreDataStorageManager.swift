@@ -22,30 +22,64 @@ class CoreDataStorageManager: FavoritesProvidable {
 
     func getFavorites() -> [MediaItemDetailedProvidable]? {
         let context = stack.persistentContainer.viewContext
-        let fetchRequest: NSFetchRequest<BookManaged> = BookManaged.fetchRequest()
-        let dateSortDescriptor: NSSortDescriptor = NSSortDescriptor(key: "publishedDate", ascending: true)
-        let priceSortDescriptor = NSSortDescriptor(key: "price", ascending: false)
-        fetchRequest.sortDescriptors = [dateSortDescriptor, priceSortDescriptor]
-        do {
-            let favorites = try context.fetch(fetchRequest)
-            return favorites.map({ $0.mappedObject() })
-        } catch {
-            assertionFailure("Error fetching media items")
-            return nil
+        switch self.mediaItemKind {
+        case .book:
+            let fetchRequest : NSFetchRequest<BookManaged> = BookManaged.fetchRequest()
+            let dateSortDescriptor: NSSortDescriptor = NSSortDescriptor(key: "publishedDate", ascending: true)
+            let priceSortDescriptor = NSSortDescriptor(key: "price", ascending: false)
+            fetchRequest.sortDescriptors = [dateSortDescriptor, priceSortDescriptor]
+            do {
+                let favorites = try context.fetch(fetchRequest)
+                return favorites.map({ $0.mappedObject() })
+            } catch {
+                assertionFailure("Error fetching books")
+                return nil
+            }
+        case .movie:
+            let fetchRequest : NSFetchRequest<MovieManaged> = MovieManaged.fetchRequest()
+            let dateSortDescriptor: NSSortDescriptor = NSSortDescriptor(key: "releasedDate", ascending: true)
+            let priceSortDescriptor = NSSortDescriptor(key: "price", ascending: false)
+            fetchRequest.sortDescriptors = [dateSortDescriptor, priceSortDescriptor]
+            do {
+                let favorites = try context.fetch(fetchRequest)
+                return favorites.map({ $0.mappedObject() })
+            } catch {
+                assertionFailure("Error fetching movies")
+                return nil
+            }
+        default:
+            fatalError("not supported yet")
         }
+
     }
 
     func getFavorite(byId favoriteId: String) -> MediaItemDetailedProvidable? {
         let context = stack.persistentContainer.viewContext
-        let fetchRequest: NSFetchRequest<BookManaged> = BookManaged.fetchRequest()
-        let predicate: NSPredicate = NSPredicate(format: "bookId = %@", favoriteId)
-        fetchRequest.predicate = predicate
-        do {
-            let favorites = try context.fetch(fetchRequest)
-            return favorites.last?.mappedObject()
-        } catch {
-            assertionFailure("Error fetching media item by id \(favoriteId)")
-            return nil
+        switch self.mediaItemKind {
+        case .book:
+            let fetchRequest: NSFetchRequest<BookManaged> = BookManaged.fetchRequest()
+            let predicate: NSPredicate = NSPredicate(format: "bookId = %@", favoriteId)
+            fetchRequest.predicate = predicate
+            do {
+                let favorites = try context.fetch(fetchRequest)
+                return favorites.last?.mappedObject()
+            } catch {
+                assertionFailure("Error fetching media item by id \(favoriteId)")
+                return nil
+            }
+        case .movie:
+            let fetchRequest: NSFetchRequest<MovieManaged> = MovieManaged.fetchRequest()
+            let predicate: NSPredicate = NSPredicate(format: "movieId = %@", favoriteId)
+            fetchRequest.predicate = predicate
+            do {
+                let favorites = try context.fetch(fetchRequest)
+                return favorites.last?.mappedObject()
+            } catch {
+                assertionFailure("Error fetching media item by id \(favoriteId)")
+                return nil
+            }
+        default:
+            fatalError("not supported yet")
         }
     }
 
@@ -77,6 +111,32 @@ class CoreDataStorageManager: FavoritesProvidable {
             } catch {
                 assertionFailure("error saving context")
             }
+        } else if let movie = favorite as? Movie {
+            let movieManaged = MovieManaged(context: context)
+            movieManaged.movieId = movie.movieId
+            movieManaged.title = movie.title
+            movieManaged.releasedDate = movie.releasedDate
+            movieManaged.coverURL = movie.coverURL?.absoluteString
+            movieManaged.summary = movie.summary
+            if let rating = movie.rating {
+                movieManaged.rating = rating
+            }
+            if let numberOfReviews = movie.numberOfReviews {
+                movieManaged.numberOfReviews = Int32(numberOfReviews)
+            }
+            if let price = movie.price {
+                movieManaged.price = price
+            }
+            movie.directors?.forEach({ (directorName) in
+                let director = Director(context: context)
+                director.fullName = directorName
+                movieManaged.addToDirectors(director)
+            })
+            do {
+                try context.save()
+            } catch {
+                assertionFailure("error saving context")
+            }
         } else {
             fatalError("not supported yet :(")
         }
@@ -85,18 +145,37 @@ class CoreDataStorageManager: FavoritesProvidable {
 
     func remove(favoriteWithId favoriteId: String) {
         let context = stack.persistentContainer.viewContext
-        let fetchRequest: NSFetchRequest<BookManaged> = BookManaged.fetchRequest()
-        let predicate: NSPredicate = NSPredicate(format: "bookId = %@", favoriteId)
-        fetchRequest.predicate = predicate
-        do {
-            let favorites = try context.fetch(fetchRequest)
-            favorites.forEach({ (bookManaged) in
-                context.delete(bookManaged)
-            })
-            try context.save()
+        switch self.mediaItemKind {
+        case .book:
+            let fetchRequest: NSFetchRequest<BookManaged> = BookManaged.fetchRequest()
+            let predicate: NSPredicate = NSPredicate(format: "bookId = %@", favoriteId)
+            fetchRequest.predicate = predicate
+            do {
+                let favorites = try context.fetch(fetchRequest)
+                favorites.forEach({ (bookManaged) in
+                    context.delete(bookManaged)
+                })
+                try context.save()
 
-        } catch {
-            assertionFailure("Error removing media item with id \(favoriteId)")
+            } catch {
+                assertionFailure("Error removing media item with id \(favoriteId)")
+            }
+        case .movie:
+            let fetchRequest: NSFetchRequest<MovieManaged> = MovieManaged.fetchRequest()
+            let predicate: NSPredicate = NSPredicate(format: "movieId = %@", favoriteId)
+            fetchRequest.predicate = predicate
+            do {
+                let favorites = try context.fetch(fetchRequest)
+                favorites.forEach({ (movieManaged) in
+                    context.delete(movieManaged)
+                })
+                try context.save()
+
+            } catch {
+                assertionFailure("Error removing media item with id \(favoriteId)")
+            }
+        default:
+            fatalError("not supported yet :(")
         }
     }
 

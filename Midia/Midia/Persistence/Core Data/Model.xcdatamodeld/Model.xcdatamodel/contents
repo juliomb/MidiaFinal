@@ -15,8 +15,25 @@
         <attribute name="rating" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="authors" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Author" inverseName="book" inverseEntity="Author" syncable="YES"/>
     </entity>
+    <entity name="Director" representedClassName="Director" syncable="YES" codeGenerationType="class">
+        <attribute name="fullName" attributeType="String" syncable="YES"/>
+        <relationship name="movie" maxCount="1" deletionRule="Nullify" destinationEntity="Movie" inverseName="directors" inverseEntity="Movie" syncable="YES"/>
+    </entity>
+    <entity name="Movie" representedClassName="MovieManaged" syncable="YES" codeGenerationType="class">
+        <attribute name="coverURL" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="movieId" attributeType="String" syncable="YES"/>
+        <attribute name="numberOfReviews" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="price" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="rating" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="releasedDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="summary" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" attributeType="String" syncable="YES"/>
+        <relationship name="directors" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Director" inverseName="movie" inverseEntity="Director" syncable="YES"/>
+    </entity>
     <elements>
-        <element name="Book" positionX="-443.2265625" positionY="85.203125" width="128" height="178"/>
         <element name="Author" positionX="-74.54296875" positionY="89.3828125" width="128" height="75"/>
+        <element name="Book" positionX="-443.2265625" positionY="85.203125" width="128" height="178"/>
+        <element name="Movie" positionX="-261" positionY="162" width="128" height="180"/>
+        <element name="Director" positionX="-252" positionY="189" width="128" height="75"/>
     </elements>
 </model>
