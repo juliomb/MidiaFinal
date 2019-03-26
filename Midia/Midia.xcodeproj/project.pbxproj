@@ -190,9 +190,9 @@
 		144E663B22371569005770BE /* Persistence */ = {
 			isa = PBXGroup;
 			children = (
+				144E664022371F7E005770BE /* StorageManager.swift */,
 				144E663C223715C3005770BE /* FavoritesProvidable.swift */,
 				148C6A822238571D00E4C844 /* CoreDataStorageManager.swift */,
-				144E664022371F7E005770BE /* StorageManager.swift */,
 				144E663E22371794005770BE /* UserDefaultStorageManager.swift */,
 				148C6A7C2238510700E4C844 /* Core Data */,
 			);
