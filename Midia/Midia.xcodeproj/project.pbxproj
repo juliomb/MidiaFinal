@@ -50,6 +50,7 @@
 		148D6CC9224ADE070088C67B /* MovieCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148D6CC8224ADE070088C67B /* MovieCollection.swift */; };
 		148D6CCA224ADE070088C67B /* MovieCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148D6CC8224ADE070088C67B /* MovieCollection.swift */; };
 		148D6CCC224ADE4F0088C67B /* MovieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148D6CCB224ADE4F0088C67B /* MovieTests.swift */; };
+		148D6CCE224ADFA40088C67B /* iTunesMoviesAPIConsumerAlamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148D6CCD224ADFA40088C67B /* iTunesMoviesAPIConsumerAlamofire.swift */; };
 		1490EFDF22248C5F00866151 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1490EFDE22248C5F00866151 /* AppDelegate.swift */; };
 		1490EFE422248C5F00866151 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1490EFE222248C5F00866151 /* Main.storyboard */; };
 		1490EFE622248C6000866151 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1490EFE522248C6000866151 /* Assets.xcassets */; };
@@ -108,6 +109,7 @@
 		148D6CC5224ADDD70088C67B /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		148D6CC8224ADE070088C67B /* MovieCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollection.swift; sourceTree = "<group>"; };
 		148D6CCB224ADE4F0088C67B /* MovieTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTests.swift; sourceTree = "<group>"; };
+		148D6CCD224ADFA40088C67B /* iTunesMoviesAPIConsumerAlamofire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTunesMoviesAPIConsumerAlamofire.swift; sourceTree = "<group>"; };
 		1490EFDB22248C5F00866151 /* Midia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Midia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1490EFDE22248C5F00866151 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1490EFE322248C5F00866151 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 				1427A5E422287C5A000F2E59 /* MediaItemProvider.swift */,
 				14509F04222DC8CA00D49881 /* GoogleBooksAPIConsumerURLSession.swift */,
 				14509F08222DDE5100D49881 /* GoogleBooksAPIConsumerAlamofire.swift */,
+				148D6CCD224ADFA40088C67B /* iTunesMoviesAPIConsumerAlamofire.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -512,6 +515,7 @@
 				144E663F22371794005770BE /* UserDefaultStorageManager.swift in Sources */,
 				1427A5902225E04C000F2E59 /* HomeViewController.swift in Sources */,
 				1432C4B1222F1CF30032BAA3 /* DetailViewController.swift in Sources */,
+				148D6CCE224ADFA40088C67B /* iTunesMoviesAPIConsumerAlamofire.swift in Sources */,
 				14509F09222DDE5100D49881 /* GoogleBooksAPIConsumerAlamofire.swift in Sources */,
 				148C6A85223863BA00E4C844 /* BookManage+Mapping.swift in Sources */,
 				144E663D223715C3005770BE /* FavoritesProvidable.swift in Sources */,
