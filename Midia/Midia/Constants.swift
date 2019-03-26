@@ -37,7 +37,7 @@ struct GoogleBooksAPIConstants {
 
 struct ITunesMoviesAPIConstants {
 
-    static func absoluteURL(withQueryParamas queryParams: [String]) -> URL {
+    static func absoluteURL(withQueryParams queryParams: [String]) -> URL {
         var components = URLComponents()
         components.scheme = "https"
         components.host = "itunes.apple.com"
@@ -58,4 +58,8 @@ struct ITunesMoviesAPIConstants {
         return components.url!
     }
 
+}
+
+enum ErrorITunes: Error {
+    case notFound
 }

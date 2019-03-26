@@ -11,13 +11,9 @@ import Alamofire
 
 class ITunesMoviesAPIConsumerAlamofire: MediaItemAPIConsumable {
 
-    enum ErrorITunes: Error {
-        case notFound
-    }
-
     func getLatestMediaItems(onSuccess success: @escaping ([MediaItemProvidable]) -> Void, failure: @escaping (Error?) -> Void) {
 
-        Alamofire.request(ITunesMoviesAPIConstants.absoluteURL(withQueryParamas: ["top"])).responseData { (response) in
+        Alamofire.request(ITunesMoviesAPIConstants.absoluteURL(withQueryParams: ["top"])).responseData { (response) in
 
             switch response.result {
             case .failure(let error):
@@ -43,7 +39,7 @@ class ITunesMoviesAPIConsumerAlamofire: MediaItemAPIConsumable {
 
         let paramsArray = queryParams.components(separatedBy: " ")
 
-        Alamofire.request(ITunesMoviesAPIConstants.absoluteURL(withQueryParamas: paramsArray)).responseData { (response) in
+        Alamofire.request(ITunesMoviesAPIConstants.absoluteURL(withQueryParams: paramsArray)).responseData { (response) in
 
             switch response.result {
             case .failure(let error):
