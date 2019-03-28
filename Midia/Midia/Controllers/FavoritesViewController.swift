@@ -25,6 +25,14 @@ class FavoritesViewController: UIViewController {
         }
     }
 
+    func reset() {
+        favorites = []
+        if let storedFavorites = StorageManager.shared.getFavorites(), tableView != nil {
+            favorites = storedFavorites
+            tableView.reloadData()
+        }
+    }
+
 }
 
 extension FavoritesViewController: UITableViewDelegate {

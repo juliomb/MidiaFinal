@@ -14,15 +14,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        guard let tabBarController = window?.rootViewController as? UITabBarController,
-            let homeViewController = tabBarController.viewControllers?.first as? HomeViewController,
-            let searchViewController = tabBarController.viewControllers?[1] as? SearchViewController else {
+        guard let tabBarController = window?.rootViewController as? MidiaTabController else {
             fatalError("Wrong initial setup")
         }
 
-        let currentMediaItemProvider = MediaItemProvider(withMediaItemKind: .movie)
-        homeViewController.mediaItemProvider = currentMediaItemProvider
-        searchViewController.mediaItemProvider = currentMediaItemProvider
+        tabBarController.setup(withMediaItemKind: .movie)
 
         return true
     }

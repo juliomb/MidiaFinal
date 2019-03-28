@@ -26,6 +26,8 @@
 		1432C4AF222F1CB80032BAA3 /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1432C4AE222F1CB80032BAA3 /* Detail.storyboard */; };
 		1432C4B1222F1CF30032BAA3 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1432C4B0222F1CF30032BAA3 /* DetailViewController.swift */; };
 		1432C4B3222F39460032BAA3 /* MediaItemDetailedProvidable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1432C4B2222F39460032BAA3 /* MediaItemDetailedProvidable.swift */; };
+		1443CD6F224D709400C5D892 /* MediaKindSwitcherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1443CD6E224D709400C5D892 /* MediaKindSwitcherViewController.swift */; };
+		1443CD71224D739500C5D892 /* MidiaTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1443CD70224D739500C5D892 /* MidiaTabController.swift */; };
 		144E66362236FB11005770BE /* MediaItemDetailedProvidable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1432C4B2222F39460032BAA3 /* MediaItemDetailedProvidable.swift */; };
 		144E663822370EED005770BE /* FavoriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144E663722370EED005770BE /* FavoriteTableViewCell.swift */; };
 		144E663A2237122B005770BE /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144E66392237122B005770BE /* FavoritesViewController.swift */; };
@@ -93,6 +95,8 @@
 		1432C4AE222F1CB80032BAA3 /* Detail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
 		1432C4B0222F1CF30032BAA3 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		1432C4B2222F39460032BAA3 /* MediaItemDetailedProvidable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaItemDetailedProvidable.swift; sourceTree = "<group>"; };
+		1443CD6E224D709400C5D892 /* MediaKindSwitcherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaKindSwitcherViewController.swift; sourceTree = "<group>"; };
+		1443CD70224D739500C5D892 /* MidiaTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MidiaTabController.swift; sourceTree = "<group>"; };
 		144E663722370EED005770BE /* FavoriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewCell.swift; sourceTree = "<group>"; };
 		144E66392237122B005770BE /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		144E663C223715C3005770BE /* FavoritesProvidable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesProvidable.swift; sourceTree = "<group>"; };
@@ -265,8 +269,10 @@
 		1490EFF122248E5600866151 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				1443CD70224D739500C5D892 /* MidiaTabController.swift */,
 				1432C4B0222F1CF30032BAA3 /* DetailViewController.swift */,
 				144E66392237122B005770BE /* FavoritesViewController.swift */,
+				1443CD6E224D709400C5D892 /* MediaKindSwitcherViewController.swift */,
 				1427A58F2225E04C000F2E59 /* HomeViewController.swift */,
 				1432C4AC222F0CDA0032BAA3 /* SearchViewController.swift */,
 				1427A5B12225FD9D000F2E59 /* Cells */,
@@ -531,6 +537,7 @@
 				1427A5DE222873BD000F2E59 /* MediaItemProvidable.swift in Sources */,
 				1427A5E522287C5A000F2E59 /* MediaItemProvider.swift in Sources */,
 				14509F05222DC8CA00D49881 /* GoogleBooksAPIConsumerURLSession.swift in Sources */,
+				1443CD71224D739500C5D892 /* MidiaTabController.swift in Sources */,
 				148C6A7F2238513000E4C844 /* Model.xcdatamodeld in Sources */,
 				1490F01F2224A37700866151 /* BookCollection.swift in Sources */,
 				148D6CC6224ADDD70088C67B /* Movie.swift in Sources */,
@@ -548,6 +555,7 @@
 				1427A5E12228787F000F2E59 /* Game.swift in Sources */,
 				144E663A2237122B005770BE /* FavoritesViewController.swift in Sources */,
 				1427A5E822287CDB000F2E59 /* MediaItemKind.swift in Sources */,
+				1443CD6F224D709400C5D892 /* MediaKindSwitcherViewController.swift in Sources */,
 				144E664122371F7E005770BE /* StorageManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

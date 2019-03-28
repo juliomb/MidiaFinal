@@ -27,6 +27,13 @@ class SearchViewController: UIViewController {
         searchBar.delegate = self
     }
 
+    func reset() {
+        mediaItems = []
+        if collectionView != nil {
+            collectionView.reloadData()
+        }
+    }
+
 }
 
 extension SearchViewController: UICollectionViewDelegate {

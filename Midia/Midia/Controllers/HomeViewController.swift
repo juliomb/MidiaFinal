@@ -59,6 +59,10 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        loadMediaItems()
+    }
+
+    func loadMediaItems() {
         state = .loading
         mediaItemProvider.getHomeMediaItems(onSuccess: { [weak self] (mediaItems) in
             self?.mediaItems = mediaItems
@@ -66,6 +70,11 @@ class HomeViewController: UIViewController {
         }) { [weak self] (error) in
             self?.state = .failure
         }
+    }
+
+    func reset() {
+        mediaItems = []
+        loadMediaItems()
     }
 
 }

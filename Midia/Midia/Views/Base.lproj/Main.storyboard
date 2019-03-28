@@ -113,10 +113,10 @@
             </objects>
             <point key="canvasLocation" x="992.79999999999995" y="27.436281859070466"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Midia Tab Controller-->
         <scene sceneID="Cht-YH-41P">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="gz8-EK-4Mc" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="gz8-EK-4Mc" customClass="MidiaTabController" customModule="Midia" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="yqa-Ib-9IM">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -127,6 +127,7 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="P0t-FK-HRN"/>
                         <segue destination="oad-Xa-uvc" kind="relationship" relationship="viewControllers" id="RhW-5V-iKr"/>
                         <segue destination="4kU-Pf-hQA" kind="relationship" relationship="viewControllers" id="DPz-9x-z6G"/>
+                        <segue destination="xXj-zW-HDc" kind="relationship" relationship="viewControllers" id="6Cq-Lg-fAe"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m03-x9-ay3" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -223,6 +224,55 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kfT-jv-5PW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="983.20000000000005" y="706.59670164917543"/>
+        </scene>
+        <!--Media Kind Switcher View Controller-->
+        <scene sceneID="fIP-sd-ytn">
+            <objects>
+                <viewController id="xXj-zW-HDc" customClass="MediaKindSwitcherViewController" customModule="Midia" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hDf-hE-kPK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Vt1-3b-lza">
+                                <rect key="frame" x="16" y="44" width="343" height="669"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UVo-zP-VMx">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="334.66666666666669"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="23"/>
+                                        <state key="normal" title="Go to Books"/>
+                                        <connections>
+                                            <action selector="didTapBooksButton:" destination="xXj-zW-HDc" eventType="touchUpInside" id="wBQ-yI-RKV"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XCS-Xq-th8">
+                                        <rect key="frame" x="0.0" y="334.66666666666674" width="343" height="334.33333333333326"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
+                                        <state key="normal" title="Go to Movies"/>
+                                        <connections>
+                                            <action selector="didTapMoviesButton:" destination="xXj-zW-HDc" eventType="touchUpInside" id="vAr-Mg-J0t"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="iDR-4z-tdJ" firstAttribute="bottom" secondItem="Vt1-3b-lza" secondAttribute="bottom" constant="16" id="KxW-w2-l3G"/>
+                            <constraint firstItem="Vt1-3b-lza" firstAttribute="leading" secondItem="iDR-4z-tdJ" secondAttribute="leading" constant="16" id="MiR-b1-LIy"/>
+                            <constraint firstItem="iDR-4z-tdJ" firstAttribute="trailing" secondItem="Vt1-3b-lza" secondAttribute="trailing" constant="16" id="YcD-kq-0zJ"/>
+                            <constraint firstItem="Vt1-3b-lza" firstAttribute="top" secondItem="iDR-4z-tdJ" secondAttribute="top" id="z5z-KU-cI4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="iDR-4z-tdJ"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" systemItem="more" id="cwn-iO-ZvD"/>
+                    <connections>
+                        <outlet property="booksButton" destination="UVo-zP-VMx" id="YUo-Uo-jOi"/>
+                        <outlet property="moviesButton" destination="XCS-Xq-th8" id="HVk-ql-oCt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ggI-hl-RO9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-196" y="1466.7487684729065"/>
         </scene>
         <!--Favorites View Controller-->
         <scene sceneID="omO-ir-Fa1">
